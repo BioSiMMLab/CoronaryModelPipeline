@@ -1,0 +1,56 @@
+parameter,value,note
+phase1,True,flag that checks if position and angles are varied. only one phase (from 1 to 3) can be true and the remainder must be false
+phase2,False,flag that checks if only diameter ratios are varied
+phase3,False,flag that checks if tortuosity is imposed
+phase5,True,flag that checks if plaque is imposed. Note that this can be combined with phases 1 through 3
+allo_scale,False,scales cardiac parameters  such as mean flow based on model volume Mainly appropriate to include this in phase 3
+non_circular_diams,False,set this to true if you wish to impose eccentric lumens randomly.
+num_geometries,16,the number of geometries you wish to generate in total
+num_cycle,4,number of cardiac cycles you wish to simulate
+num_nodes,1,number of HPC nodes you wish to use: but if you are not running HPC simulations simply ignore this
+num_cores,128,number of CPU cores you wish to use: but if you are not running HPC simulations simply ignore this
+skip_nums,1:2:3:4:5,change this to a list of numbers you wish the pipeline to skip when executing the pipeline using colons to split the numbers
+population_sex,female,the sex of the data which is particularly used when phase_2 flag is TRUE
+model_folder_name,Test3,name of the folder in which you wish to store the generated models.
+geometric_features,-------------------------------------,the following variables are the parametric descriptions for geometric feature in the model
+angle_ladlcx,40:65:75:89,angle at the lad lcx bifurcation
+angle_ladd1,51:51:51:51,angle at the lad d1 bifurcation
+angle_ladd2,51:51:51:51,angle at the lad d2 bifurcation
+angle_lcxom1,55:55:55:55,angle at the lcx om1 bifurcation
+angle_lcxom2,55:55:55:55,angle at the lcx om2 bifurcation
+length_lmca,1.8:2.2:2.8:3.5,"position for the lad lcx bifurcation, or the lmca length"
+length_prox_lad,3.5:3.5:3.5:3:5,"position of the lad d1 bifurcation, or the proximal lad length"
+length_med_lad,2.4:2.4:2.4:2.4,"position of the lad d2 bifurcation, or the medial lad length"
+length_prox_lcx,4.1:4.1:4.1:4.1,"position of the lcx om1 bifurcation, or the proximal lcx length"
+length_med_lcx,2.7:2.7:2.7:2.7,"position of the lcx om1 bifurcation, or the medial lcx length"
+terminal_lad,3,terminal length of the lad branch
+terminal_d1,3,terminal length of the d1 branch
+terminal_d2,3,terminal length of the d2 branch
+terminal_lcx,3,terminal length of the lcx branch
+terminal_om1,3,terminal length of the om1 branch
+terminal_om2,3,terminal length of the om2 branch
+diameter_lad,3.2:3.2:3.2:3.2,diameter of the lad
+diameter_lcx,3:3:3:3,diameter of the lcx
+tortuosity,-------------------------------------,This segment contains details about tortuosity for different segments of the LAD and LCx branch
+inflections_prox_lad,1:1:1:1,the number of inflection points or peaks in the proximal lad
+inflections_med_lad,1:1:1:1,the number of inflection points or peaks in the medial lad
+inflections_prox_lcx,1:1:1:1,the number of inflection points or peaks in the proximal lcx
+inflections_med_lcx,1:1:1:1,the number of inflection points or peaks in the medial lcx
+len_curve_prox_lad,0.8:0.8:0.8:0.8,the fraction of the proximal lad length on which tortuosity is imposed
+len_curve_med_lad,0.8:0.8:0.8:0.8,the fraction of the medial lad length on which tortuosity is imposed
+len_curve_prox_lcx,0.8:0.8:0.8:0.8,the fraction of the proximal lcx length on which tortuosity is imposed
+len_curve_med_lcx,0.8:0.8:0.8:0.8,the fraction of the medial lcx length on which tortuosity is imposed
+amplitude_prox_lad,0.125:0.125:0.125:0.125,amplitude of the inflections for a tortuous path in the proximal lad in centimeters and changing the sign changes the direction of the curve
+amplitude_med_lad,0.125:0.125:0.125:0.125,amplitude of the inflections for a tortuous path in the medial lad in centimeters
+amplitude_prox_lcx,-0.2:-0.2:-0.2:-0.2,amplitude of the inflections for a tortuous path in the proximal lcx in centimeters
+amplitude_med_lcx,-0.2:-0.2:-0.2:-0.2,amplitude of the inflections for a tortuous path in the medial lcx in centimeters
+plaque_features,-------------------------------------,This segment explains the plaque geometric parameters
+lad_plaque,1,flag if plaque is imposed in the lad
+lad_stenosis,0.1:0.2:0.5:0.6,stenosis percentage for lad plaque
+lad_plaque_length,1.7:1.7:1.7:1.7,length of the plaque in the lad
+lcx_plaque,0,flag if plaque is imposed in the lcx
+lcx_stenosis,0.3:0.4:0.5:0.6,stenosis percentage for lcx plaque
+lcx_plaque_length,1.7:1.7:1.7:1.7,length of the plaque in the lcx
+mesh_features,-------------------------------------,edge sizes for meshing and modeling. Further descriptions below
+mesh_edge_size,0.026,"if set to auto this will automatically scales the edge size based on the radius. Otherwise, a number can be set to the edge size. If it is set edge size is greater than 0.0079 mm, than it will be scaled by radius. Otherwise the radius-based edge refinement will be used"
+model_edge_size,0.018,"in units of mm: this is the average element size in the 3d lofted model files, and should be smaller than the edge size of the simulation"
