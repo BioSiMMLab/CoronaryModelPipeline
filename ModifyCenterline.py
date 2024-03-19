@@ -303,7 +303,6 @@ def SphereCheck(data, mb_vector, branchID, LAD_LCX_angle):
 
         adjustment_vector = branch_5_center - neutral_centroid
 
-        # print('centroid adjustment vector', adjustment_vector)  # adjust the center based on the shifted LCx position
 
         center = [-8, 9,-8.6] + adjustment_vector
         rad_f  = interp1d(np.array([35.2,105.2]), np.array([7.10, 4.5]), fill_value = 'extrapolate')

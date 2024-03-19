@@ -469,15 +469,18 @@ def MeshModel(model, save_path, radii, radii_mainbranch, paths, phase_5, edge_s=
 
 
     options = sv.meshing.TetGenOptions(global_edge_size=edge_size, surface_mesh_flag=True, volume_mesh_flag=True)
-    options.use_mmg = False
 
     ######################## perform radius based meshing if the flags are true
     ## two flags are used because even if it is requested, in some cases the requested edge size is already small enough
     ## to not warrant having additional radial refinement.
     if radius_based_meshing == True and check_radius_meshing == True:
+        options.use_mmg = False         # this is a "rapid meshing option" it must be false to enable radius based meshing
+
         print('starting radius based mesh refinement ... ')
         CustomRadiusMeshing(paths, radii, radii_mainbranch, options, save_path, phase_5, edge_s, radii[0,0])
         options.sphere_refinement_on = True 
+    else:
+        options.use_mmg = True         # this is a "rapid meshing option" it must be false to enable radius based meshing
 
 
 

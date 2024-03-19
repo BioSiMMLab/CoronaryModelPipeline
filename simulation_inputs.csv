@@ -13,24 +13,24 @@ skip_nums,1:2:3:4:5,change this to a list of numbers you wish the pipeline to sk
 population_sex,female,the sex of the data which is particularly used when phase_2 flag is TRUE
 model_folder_name,Test3,name of the folder in which you wish to store the generated models.
 geometric_features,-------------------------------------,the following variables are the parametric descriptions for geometric feature in the model
-angle_ladlcx,40:65:75:89,angle at the lad lcx bifurcation
-angle_ladd1,51:51:51:51,angle at the lad d1 bifurcation
-angle_ladd2,51:51:51:51,angle at the lad d2 bifurcation
-angle_lcxom1,55:55:55:55,angle at the lcx om1 bifurcation
-angle_lcxom2,55:55:55:55,angle at the lcx om2 bifurcation
-length_lmca,1.8:2.2:2.8:3.5,"position for the lad lcx bifurcation, or the lmca length"
-length_prox_lad,3.5:3.5:3.5:3:5,"position of the lad d1 bifurcation, or the proximal lad length"
-length_med_lad,2.4:2.4:2.4:2.4,"position of the lad d2 bifurcation, or the medial lad length"
-length_prox_lcx,4.1:4.1:4.1:4.1,"position of the lcx om1 bifurcation, or the proximal lcx length"
-length_med_lcx,2.7:2.7:2.7:2.7,"position of the lcx om1 bifurcation, or the medial lcx length"
-terminal_lad,3,terminal length of the lad branch
-terminal_d1,3,terminal length of the d1 branch
-terminal_d2,3,terminal length of the d2 branch
-terminal_lcx,3,terminal length of the lcx branch
-terminal_om1,3,terminal length of the om1 branch
-terminal_om2,3,terminal length of the om2 branch
-diameter_lad,3.2:3.2:3.2:3.2,diameter of the lad
-diameter_lcx,3:3:3:3,diameter of the lcx
+angle_ladlcx,40:65:75:89,angle at the lad lcx bifurcation in degrees
+angle_ladd1,51:51:51:51,angle at the lad d1 bifurcation in degrees
+angle_ladd2,51:51:51:51,angle at the lad d2 bifurcation in degrees
+angle_lcxom1,55:55:55:55,angle at the lcx om1 bifurcation in degrees
+angle_lcxom2,55:55:55:55,angle at the lcx om2 bifurcation in degrees
+length_lmca,1.8:2.2:2.8:3.5,"position for the lad lcx bifurcation, or the lmca length in cm"
+length_prox_lad,3.5:3.5:3.5:3:5,"position of the lad d1 bifurcation, or the proximal lad length in cm"
+length_med_lad,2.4:2.4:2.4:2.4,"position of the lad d2 bifurcation, or the medial lad length in cm"
+length_prox_lcx,4.1:4.1:4.1:4.1,"position of the lcx om1 bifurcation, or the proximal lcx length in cm"
+length_med_lcx,2.7:2.7:2.7:2.7,"position of the lcx om1 bifurcation, or the medial lcx length in cm"
+terminal_lad,3,terminal length of the lad branch in cm
+terminal_d1,3,terminal length of the d1 branch in cm
+terminal_d2,3,terminal length of the d2 branch in cm
+terminal_lcx,3,terminal length of the lcx branch in cm
+terminal_om1,3,terminal length of the om1 branch in cm
+terminal_om2,3,terminal length of the om2 branch in cm
+diameter_lad,3.2:3.2:3.2:3.2,diameter of the lad in mm
+diameter_lcx,3:3:3:3,diameter of the lcx in mm
 tortuosity,-------------------------------------,This segment contains details about tortuosity for different segments of the LAD and LCx branch
 inflections_prox_lad,1:1:1:1,the number of inflection points or peaks in the proximal lad
 inflections_med_lad,1:1:1:1,the number of inflection points or peaks in the medial lad
@@ -53,4 +53,4 @@ lcx_stenosis,0.3:0.4:0.5:0.6,stenosis percentage for lcx plaque
 lcx_plaque_length,1.7:1.7:1.7:1.7,length of the plaque in the lcx
 mesh_features,-------------------------------------,edge sizes for meshing and modeling. Further descriptions below
 mesh_edge_size,0.026,"if set to auto this will automatically scales the edge size based on the radius. Otherwise, a number can be set to the edge size. If it is set edge size is greater than 0.0079 mm, than it will be scaled by radius. Otherwise the radius-based edge refinement will be used"
-model_edge_size,0.018,"in units of mm: this is the average element size in the 3d lofted model files, and should be smaller than the edge size of the simulation"
+model_edge_size,0.018,"in units of cm: this is the average element size in the 3d lofted model files, and should be smaller than the edge size of the simulation"
