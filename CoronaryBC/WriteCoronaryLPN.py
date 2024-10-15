@@ -99,26 +99,18 @@ def WriteCortDat(path_to_files, path_to_sim, num_points, num_caps, Qtotal, press
         # print('radius: ' + str(np.sqrt(area_cor_l[i]/np.pi)))
         # print('diameter: ' + str(2*np.sqrt(area_cor_l[i]/np.pi)))
 
-    # if phase2:
     Rtotal_cor = pressure*pconv/Qtotal/coronary_aorta_flow_split
-    # else:
-    #     Rtotal_cor = mean_artery_p_phase1*pconv/cardiac_output_phase1/coronary_aorta_flow_split
-
     Rtotal_cor_l = Rtotal_cor * (LRsplit + 1)/LRsplit
 
 
     print('Coronary resistance total: {0}, left coronary: {1}'.format(Rtotal_cor, Rtotal_cor_l))
 
-    # if phase2:
     if pop_sex == 'male':
         Ccor_val = Ccor_scaling * Ccor_male
     elif pop_sex == 'female':
         Ccor_val = Ccor_scaling * Ccor_female
     else:
         Ccor_val = Ccor_val_phase1 #3.2e-5
-    # else:
-    #     Ccor_val = Ccor_val_phase1
-
 
     print('scaled capacitance,', Ccor_val, Ccor_scaling, pop_sex)
     np.savetxt(path_to_sim + '/measurements/capacitance.txt', np.array([Ccor_val]), fmt='%.9f')
@@ -133,11 +125,6 @@ def WriteCortDat(path_to_files, path_to_sim, num_points, num_caps, Qtotal, press
 
     Cim_l = Cim_scale*np.array(Ccor_l)
     Ca_l = Ca_scale*np.array(Ccor_l)
-
-
-    # shutil.copyfile(path_root + '/plv.dat', path_to_sim + 'plv.dat')
-    # shutil.copyfile(path_root + '/inlet_sv.flow', path_to_sim + 'inlet_sv.flow')
-
 
     with open(path_to_sim + 'cort.dat','w') as coronaryModel:
         coronaryModel.write('{0}'.format(num_points))
